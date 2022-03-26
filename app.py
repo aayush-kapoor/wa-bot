@@ -18,6 +18,11 @@ def sms_reply():
         resp = MessagingResponse()
         resp.message("A missing pill can cause a break in your treatment, don’t miss your pill!")
         counter = 1 
+        
+    elif msg == "yes" or msg == "yaa" or msg == "yup" or msg == "y" or msg == "i have" or msg == "i wouldn't miss my pill":
+        resp = MessagingResponse()
+        resp.message("Great Job! I'll check back with you tomorrow.")
+        counter = 2
 
 if __name__ == "__main__":
     app.run(debug=True)
