@@ -23,6 +23,10 @@ def sms_reply():
         resp = MessagingResponse()
         resp.message("Great Job! I'll check back with you tomorrow.")
         counter = 2
+        
+    elif msg == "hi" or msg == "hey" or msg == "hello" or msg == "hey there" or msg == "good day":
+        resp = MessagingResponse()
+        resp.message("Hello! Have you taken your pill today? (Y/N)")
 
 if __name__ == "__main__":
     app.run(debug=True)
