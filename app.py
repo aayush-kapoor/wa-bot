@@ -36,6 +36,13 @@ def sms_reply():
         elif counter == 2:
             resp = MessagingResponse()
             resp.message("😊")
+            
+    else:
+        resp = MessagingResponse()
+        resp.message("Could you please repeat that?")
+
+    return str(resp)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
