@@ -11,17 +11,13 @@ def hello():
 
 @app.route("/sms", methods=['POST'])
 def sms_reply():
-    """Respond to incoming calls with a simple text message."""
-    # Fetch the message
     msg = request.form.get('Body')
-    phone_no = request.form.get('From')
-
-    reply = fetch_reply(msg, phone_no)
-    # Create reply
-    resp = MessagingResponse()
-    resp.message(reply)
-
-    return str(resp)
+    msg=msg.lower()
+    counter = 0
+    if msg == "no" or msg == "nope" or msg == "nah" or msg == "n" or msg == "not yet":
+        resp = MessagingResponse()
+        resp.message("A missing pill can cause a break in your treatment, don’t miss your pill!")
+        counter = 1 
 
 if __name__ == "__main__":
     app.run(debug=True)
